@@ -3,6 +3,7 @@ var localStorage = require('localStorage')
 
 var fs = require('../')
 
+/*
 test('Event "readable"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/quoin', 'abc')
@@ -30,6 +31,7 @@ test('Event "end"', {skip:true}, function (t) {
     t.equal(chunk, '0123456789')
   })
 })
+*/
 
 test('readable.read', function(t) {
   localStorage.setItem('/a', 'bc')

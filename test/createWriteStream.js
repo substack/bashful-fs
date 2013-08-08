@@ -3,6 +3,7 @@ var localStorage = require('localStorage')
 
 var fs = require('../')
 
+/*
 test('Event "drain"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/quoin', 'abc')
@@ -39,21 +40,19 @@ test('Event "pipe"', {skip:true}, function (t) {
     t.equal(chunk, '0123456789')
   })
 })
-
-test('writeable.end', function (t) {
-  t.plan(1)
-  localStorage.setItem('/hamster', '0123456789')
-  var writeable = fs.createWriteStream('/hamster')
-  writeable.on('pipe', function(chunk) {
-    t.equal(chunk, '0123456789')
-  })
-})
+*/
 
 test('writeable.write', function (t) {
   t.plan(1)
-  localStorage.setItem('/hamster', '0123456789')
   var writeable = fs.createWriteStream('/hamster')
-  writeable.on('pipe', function(chunk) {
-    t.equal(chunk, '0123456789')
+  writeable.write('abcdefg', function() {
+    t.check(localStorage.getItem('/hamster'), 'abcdefg')
+  })
+})
+test('writeable.write', function (t) {
+  t.plan(1)
+  var writeable = fs.createWriteStream('/piano')
+  writeable.write('abcdefg', function() {
+    t.check(localStorage.getItem('/piano'), 'abcdefg')
   })
 })
