@@ -4,11 +4,10 @@
     "description": "Mimic a Unix filesystem in a browser",
     "main": "index.js",
     "dependencies": {
+        "localStorage": "~1.0.2"
     },
     "devDependencies": {
-        "tap": "~0.4.0",
-        "concat-stream": "~0.1.1",
-        "mkdirp": "~0.3.5"
+        "tap": "~0.4.0"
     },
     "scripts": {
         "test": "tap test/*.js"
