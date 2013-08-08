@@ -27,3 +27,4 @@ sh.on('close', process.exit);
 
 * Use [riffwave](http://codebase.es/riffwave/) to make `/dev/audio`.
 * `/dev/mouse`
+* It would be nice to get it working; hilariously, it doesn't seem to work with bashful yet.
