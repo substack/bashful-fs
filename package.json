@@ -1,0 +1,32 @@
+{
+    "name": "bashful-fs",
+    "version": "0.0.0",
+    "description": "Mimic a Unix filesystem in a browser",
+    "main": "index.js",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "tap": "~0.4.0",
+        "concat-stream": "~0.1.1",
+        "mkdirp": "~0.3.5"
+    },
+    "scripts": {
+        "test": "tap test/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/tlevine/bashful-fs.git"
+    },
+    "homepage": "https://github.com/tlevine/bashful-fs",
+    "keywords": [
+        "bash",
+        "shell",
+        "fs"
+    ],
+    "author": {
+        "name": "Thomas Levine",
+        "email": "occurrence@thomaslevine.com",
+        "url": "http://thomaslevine.com"
+    },
+    "license": "MIT"
+}
