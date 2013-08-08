@@ -36,16 +36,16 @@ test('Event "end"', {skip:true}, function (t) {
 test('readable.read', function(t) {
   localStorage.setItem('/a', 'bc')
   var readable = fs.createReadStream('/a')
-  t.check(readable.read(), 'bc')
+  t.equal(readable.read(), 'bc')
   t.end()
 })
 
 test('Dummy functions', function(t) {
   localStorage.setItem('/definitely', '0123456789')
   var readable = fs.createReadStream('/definitely')
-  t.check(typeof(readable.setEncoding), 'function')
-  t.check(typeof(readable.resume), 'function')
-  t.check(typeof(readable.pause), 'function')
+  t.equal(typeof(readable.setEncoding), 'function')
+  t.equal(typeof(readable.resume), 'function')
+  t.equal(typeof(readable.pause), 'function')
   t.end()
 })
 

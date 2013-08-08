@@ -46,13 +46,13 @@ test('writeable.write', function (t) {
   t.plan(1)
   var writeable = fs.createWriteStream('/hamster')
   writeable.write('abcdefg', function() {
-    t.check(localStorage.getItem('/hamster'), 'abcdefg')
+    t.equal(localStorage.getItem('/hamster'), 'abcdefg')
   })
 })
 test('writeable.write', function (t) {
   t.plan(1)
   var writeable = fs.createWriteStream('/piano')
   writeable.write('abcdefg', function() {
-    t.check(localStorage.getItem('/piano'), 'abcdefg')
+    t.equal(localStorage.getItem('/piano'), 'abcdefg')
   })
 })
