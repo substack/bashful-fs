@@ -25,7 +25,8 @@ Writeable.prototype.write = Writeable.prototype.end = function(chunk, callback) 
 }
 
 function PseudoWriteable () {}
-PseudoWriteable.prototype.on = PseudoWriteable.prototype.write = PseudoWriteable.prototype.end = function() {}
+PseudoWriteable.prototype.on = function() {}
+PseudoWriteable.prototype.write = PseudoWriteable.prototype.end = function(x, cb) {cb()}
 
 function PseudoReadable () {}
 PseudoReadable.prototype.on = PseudoReadable.prototype.read = PseudoReadable.prototype.end = function() {}
