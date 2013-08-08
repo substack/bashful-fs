@@ -1,8 +1,7 @@
 var test = require('tap').test;
 var localStorage = require('localStorage')
 
-var Bfs = require('../')
-fs = new Bfs(localStorage)
+var fs = require('../')
 
 test('A normal file should exist when it is an empty string in localStorage', function (t) {
   t.plan(1)
