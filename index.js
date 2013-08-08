@@ -29,7 +29,8 @@ PseudoWriteable.prototype.on = function() {}
 PseudoWriteable.prototype.write = PseudoWriteable.prototype.end = function(x, cb) {cb()}
 
 function PseudoReadable () {}
-PseudoReadable.prototype.on = PseudoReadable.prototype.read = PseudoReadable.prototype.end = function() {}
+PseudoReadable.prototype.on = function() {}
+PseudoReadable.prototype.read = PseudoReadable.prototype.end = function() {return ''}
 
 function DevZero () {}
 DevZero.prototype.on = DevZero.prototype.end = function() {}
