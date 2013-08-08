@@ -22,7 +22,7 @@ test('A normal file should exist when it is in localStorage', function (t) {
 
 test('A normal file should not exist when it is null in localStorage', function (t) {
   t.plan(1)
-  fs.exists('chainsaw', function(result) {
+  fs.exists('quoin', function(result) {
     t.notOk(result)
   })
 })

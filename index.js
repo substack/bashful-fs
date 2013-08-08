@@ -3,10 +3,12 @@ if (typeof(localStorage) === 'undefined') { var localStorage = require('localSto
 function Bfs(opts) {
   if (!opts) opts = {};
   if (!opts.localStorage) opts.localStorage = localStorage;
+
+  this.localStorage = opts.localStorage
 }
 
 Bfs.prototype.exists = function(path, callback) {
-  callback(true) // this.localStorage.getItem(path) !== null
+  callback(this.localStorage.getItem(path) !== null)
 }
 
 module.exports = Bfs
