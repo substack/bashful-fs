@@ -6,3 +6,4 @@ implementing `fs.exists`, `fs.createReadStream` and `fs.createWriteStream`
 ## Ideas
 
 * Use [riffwave](http://codebase.es/riffwave/) to make `/dev/audio`.
+* `/dev/mouse`
