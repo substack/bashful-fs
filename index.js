@@ -1,15 +1,12 @@
 if (typeof(localStorage) === 'undefined') { var localStorage = require('localStorage') }
 
-module.exports = fs = {}
-
-fs.exists = function(path, callback) {
-  callback(localStorage.getItem(path) !== null)
-}
-
 function Readable (path) {
   this.path = path
 }
 Readable.prototype.on = function() {}
+Readable.prototype.read = function() {
+  return localStorage.getItem(this.path)
+}
 
 function Writeable (path) {
   this.path = path
@@ -21,6 +18,15 @@ Writeable.prototype.write = Writeable.prototype.end = function(chunk, callback) 
   if (old === null) { old = '' }
   localStorage.setItem(this.path, old + chunk)
   callback()
+}
+
+
+
+
+module.exports = fs = {}
+
+fs.exists = function(path, callback) {
+  callback(localStorage.getItem(path) !== null)
 }
 
 fs.createReadStream = function(path /* no options */ ) {
