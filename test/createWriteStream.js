@@ -3,7 +3,7 @@ var localStorage = require('localStorage')
 
 var fs = require('../')
 
-test('Event "drain"', function (t) {
+test('Event "drain"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/quoin', 'abc')
   var writeable = fs.createWriteStream('/quoin')
@@ -13,7 +13,7 @@ test('Event "drain"', function (t) {
   })
 })
 
-test('Event "finish"', function (t) {
+test('Event "finish"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/wildebeest', '0123456789')
   var writeable = fs.createWriteStream('/wildebeest')
@@ -22,7 +22,7 @@ test('Event "finish"', function (t) {
   })
 })
 
-test('Event "unpipe"', function (t) {
+test('Event "unpipe"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/hamster', '0123456789')
   var writeable = fs.createWriteStream('/hamster')
@@ -31,7 +31,7 @@ test('Event "unpipe"', function (t) {
   })
 })
 
-test('Event "pipe"', function (t) {
+test('Event "pipe"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/hamster', '0123456789')
   var writeable = fs.createWriteStream('/hamster')

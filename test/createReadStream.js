@@ -3,7 +3,7 @@ var localStorage = require('localStorage')
 
 var fs = require('../')
 
-test('Event "readable"', function (t) {
+test('Event "readable"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/quoin', 'abc')
   var readable = fs.createReadStream('/quoin')
@@ -13,7 +13,7 @@ test('Event "readable"', function (t) {
   })
 })
 
-test('Event "data"', function (t) {
+test('Event "data"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/wildebeest', '0123456789')
   var readable = fs.createReadStream('/wildebeest')
@@ -22,7 +22,7 @@ test('Event "data"', function (t) {
   })
 })
 
-test('Event "end"', function (t) {
+test('Event "end"', {skip:true}, function (t) {
   t.plan(1)
   localStorage.setItem('/hamster', '0123456789')
   var readable = fs.createReadStream('/hamster')
