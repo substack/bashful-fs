@@ -7,6 +7,7 @@ Readable.prototype.on = function() {}
 Readable.prototype.read = function() {
   return localStorage.getItem(this.path)
 }
+Readable.prototype.setEncoding = Readable.prototype.resume = Readable.prototype.pause = function () {}
 
 function Writeable (path) {
   this.path = path
