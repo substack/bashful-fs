@@ -50,9 +50,14 @@ test('Dummy functions', function(t) {
 })
 
 test('readable.pipe', {skip:true}, function(t) {
-  localStorage.setItem('/b', 'b')
-  var readable = fs.createReadStream('/b')
-  t.end()
+  t.plan(1)
+  localStorage.setItem('/from', 'abc')
+  var readable = fs.createReadStream('/from')
+  var writeable = {end:function(chunk, callback){ this.contents = chunk}}
+  var writeable2 = readable.pipe(writeable)
+  writeable2.on('finish', function(){
+    t.equal(contents, 'abc')
+  })
 })
 
 test('readable.unpipe', {skip:true}, function(t) {
